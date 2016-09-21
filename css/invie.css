@@ -4,7 +4,7 @@ body {
 }
 
 .contenedor {
-  width: 800px;
+  max-width: 800px;
   margin: auto;
   position: relative;
 }
@@ -239,8 +239,52 @@ table, th, td {
 }
 
 @media screen and (max-width: 800px) {
-  body {
-    background: peru;
-    border: 15px solid lightblue;
+/*  .contenedor {
+    width: auto;
+    max-width: 800px;
+  }*/
+  .titulo {
+    font-size: 45px;
+    margin-top: 30px;
   }
+
+  .title-a {
+    font-size: 18px;
+  }
+
+  .portada {
+    height: auto;
+  }
+
+  .portada .button {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+
+  .guitarras {
+    text-align: center;
+  }
+
+  .izquierda, .derecha {
+    float: none;
+    position: static;
+  }
+
+  .title-b {
+    margin: 0;
+  }
+
+  .guitarra li {
+    list-style: none;
+  }
+
+  .guitarra.b {
+    height: auto;
+  }
+
+  .contenedor-guitarra-b {
+    position: static;
+    margin: 0;
+  }
+  
 }

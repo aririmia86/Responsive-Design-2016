@@ -106,9 +106,27 @@
     </div>
   </footer>
   <script>
+    var $consulta = window.matchMedia('(max-width: 500px)');
+    // Escucha cuando se hace resize en la ventana del navegador
+    $consulta.addListener(mediaQuery);
+
+    function mediaQuery() {
+      if($consulta.matches) {
+        $burguerButton.addEventListener('touchstart', toggleMenu);
+      } else {
+        // Hay que quitar el Listener para que no llegue a haber dos
+        // Listener escuchando el mismo evento porque en ese caso
+        // el toggle quitaria y pondria la clase (no habria cambio)
+        $burguerButton.removeEventListener('touchstart', toggleMenu);
+      }
+    }
+
     var $burguerButton = document.getElementById('burguer-button');
     var $menu = document.getElementById('menu');
-    $burguerButton.addEventListener('touchstart', toggleMenu);
+
+    //Se llama a la funcion al inicio aparte del listener para que
+    //compruebe la resolucion al inicio y active el listener o no
+    mediaQuery();
 
     function toggleMenu() {
       $menu.classList.toggle('active');

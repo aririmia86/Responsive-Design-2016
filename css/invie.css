@@ -364,6 +364,15 @@ video {
   .contenedor-guitarra-a {
     padding: 0;
   }
+
+  .tabla {
+    margin: 50px 20px;
+  }
+
+  .tabla .contenedor {
+    overflow: auto;
+    border: 1px solid #273b47;
+  }
   
 }
 
@@ -474,6 +483,14 @@ video {
     position: static;
   }
 
+  .header {
+    position: static;
+  }
+
+  .header .contenedor {
+    position: static;
+  }
+
   .titulo {
     font-size: 30px;
   }
@@ -490,6 +507,11 @@ video {
     font-size: 30px;
   }
 
+  .burguer-button {
+    color: white;
+  }
+
+  
 
 }
 

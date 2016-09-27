@@ -5,6 +5,7 @@
   <title>Precios de tus mejores guitarras!!</title>
   <link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet">
   <link rel="stylesheet" href="css/invie.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
 <body>
   <header id="header" class="header background">
@@ -12,7 +13,9 @@
       <figure class="logotipo">
         <img src="images/invie.png" width="186" height="60" alt="Invie logotipo">
       </figure>
-      <nav class="menu">
+      <span class="burguer-button icon-menu" id="burguer-button"></span>
+
+      <nav class="menu" id="menu">
         <ul>
           <li>
             <a href="index.html">Home</a>
@@ -101,5 +104,38 @@
       </form>
     </div>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.6.2/blazy.min.js"></script>
+  <script>
+    var $consulta = window.matchMedia('(max-width: 500px)');
+    // Escucha cuando se hace resize en la ventana del navegador
+    $consulta.addListener(mediaQuery);
+
+    function mediaQuery() {
+      if($consulta.matches) {
+        $burguerButton.addEventListener('touchstart', toggleMenu);
+      } else {
+        // Hay que quitar el Listener para que no llegue a haber dos
+        // Listener escuchando el mismo evento porque en ese caso
+        // el toggle quitaria y pondria la clase (no habria cambio)
+        $burguerButton.removeEventListener('touchstart', toggleMenu);
+      }
+    }
+
+    var $burguerButton = document.getElementById('burguer-button');
+    var $menu = document.getElementById('menu');
+
+    //Se llama a la funcion al inicio aparte del listener para que
+    //compruebe la resolucion al inicio y active el listener o no
+    mediaQuery();
+
+    function toggleMenu() {
+      $menu.classList.toggle('active');
+    }
+
+    var bLazy = new Blazy({
+        selector: 'img'
+    });
+      
+  </script>
 </body>
 </html>

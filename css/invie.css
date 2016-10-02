@@ -287,10 +287,24 @@ table, th, td {
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 20px;
   left: 20px;
   z-index: 3;
+  display: none;
+}
+
+.video-demo {
+  max-width: 500px;
+  width: 100%;
+  /*margin: 0 auto 80px;*/
+  border: 5px solid #3c5b6e;
+}
+
+.video-demo-contenedor {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
 }
 
 video {
@@ -373,6 +387,10 @@ video {
     overflow: auto;
     border: 1px solid #273b47;
   }
+
+  .video-demo-contenedor {
+    margin-bottom: 30px;
+  }
   
 }
 
@@ -440,7 +458,7 @@ video {
 @media screen and (max-width: 500px) {
   .menu {
     background: rgba(255,60,88,.8);
-    position: absolute;
+    position: fixed;
     left: -100%;
     width: 100%;
     top: 0;
@@ -450,6 +468,14 @@ video {
     display: flex;
     align-items: center;
     transition: .3s;
+  }
+
+  .portada .button{
+    display: block;
+  }
+
+  .formulario .col2 {
+    align-items: stretch;
   }
 
   .menu.active {
@@ -507,11 +533,18 @@ video {
     font-size: 30px;
   }
 
-  .burguer-button {
-    color: white;
+  .video-demo-contenedor {
+    margin: 0 10px 30px 10px;
   }
 
-  
+  .burguer-button {
+    color: white;
+    display: block;
+  }
+
+  .precios .header .logotipo {
+    margin: 50px 0;
+  }
 
 }
 
